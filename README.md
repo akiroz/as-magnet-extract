@@ -2,6 +2,12 @@
 
 Simple script for grabbing magnet URLs from girlcelly.blog
 
+Written in ~ 20 lines of Clojure, no error handling.
+
+### Download
+
+[girlcelly-magnet-extract.jar](https://github.com/akiroz/girlcelly-magnet-extract/releases/download/0.1.0/girlcelly-magnet-extract.jar)
+
 ### Usage
 
 ```
@@ -20,3 +26,13 @@ magnet:?xt=urn:btih:6B535D95D61B2395801DF9F0FBD8B66E5E448808
 magnet:?xt=urn:btih:422EB714E9CEB624881EF2683438C59F8DB29472
 ...
 ```
+
+### Building
+
+```
+$ git clone ...
+$ cd girlcelly-magnet-extract
+$ lein uberjar
+```
+
+Runable JAR is in `target/uberjar/`
