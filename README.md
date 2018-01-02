@@ -1,11 +1,14 @@
-## girlcelly-magnet-extract
+## as-magnet-extract
 
-Simple script for grabbing girlcelly's releases from AS Forums
+Simple script for grabbing magnet URIs from AS Forums
 
 ### Changes
 
 0.3.0:
-- girlcelly's blog is down, grab releases from AS Forums
+- Complete rewrite, rename project
+- Grab releases from AS Forums
+- Network concurrency: 16
+- External search spec `search.edn`
 
 0.2.0:
 - Auto-detect last page
@@ -16,24 +19,27 @@ Simple script for grabbing girlcelly's releases from AS Forums
 
 ### Download
 
-Latest Release: [girlcelly-magnet-extract.jar][]
+Latest Release: [as-magnet-extract.jar][]
 
-[girlcelly-magnet-extract.jar]: https://github.com/akiroz/girlcelly-magnet-extract/releases/download/0.3.0/girlcelly-magnet-extract.jar
+[as-magnet-extract.jar]: https://github.com/akiroz/as-magnet-extract/releases/download/0.3.0/as-magnet-extract.jar
 
 ### Usage
 
 ```
-$ java -jar girlcelly-magnet-extract.jar
+$ java -jar as-magnet-extract.jar           ## reads search.edn from current dir
+$ java -jar as-magnet-extract.jar 64265316  ## provide an AS search ID
 ```
 
 e.g.
 ```
-$ java -jar girlcelly-magnet-extract.jar
+$ java -jar as-magnet-extract.jar
 ```
 
 STDERR:
 ```
-
+Search ID: 64265316
+Found 105 threads in 5 pages.
+...
 ```
 
 STDOUT:
@@ -52,7 +58,7 @@ magnet:?xt=urn:btih:422EB714E9CEB624881EF2683438C59F8DB29472
 
 ```
 $ git clone ...
-$ cd girlcelly-magnet-extract
+$ cd as-magnet-extract
 $ lein uberjar
 ```
 
