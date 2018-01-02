@@ -1,10 +1,11 @@
 ## girlcelly-magnet-extract
 
-Simple script for grabbing magnet URLs from girlcelly.blog
-
-Written in ~ 30 lines of Clojure, no error handling.
+Simple script for grabbing girlcelly's releases from AS Forums
 
 ### Changes
+
+0.3.0:
+- girlcelly's blog is down, grab releases from AS Forums
 
 0.2.0:
 - Auto-detect last page
@@ -17,24 +18,24 @@ Written in ~ 30 lines of Clojure, no error handling.
 
 Latest Release: [girlcelly-magnet-extract.jar][]
 
-[girlcelly-magnet-extract.jar]: https://github.com/akiroz/girlcelly-magnet-extract/releases/download/0.2.0/girlcelly-magnet-extract.jar
+[girlcelly-magnet-extract.jar]: https://github.com/akiroz/girlcelly-magnet-extract/releases/download/0.3.0/girlcelly-magnet-extract.jar
 
 ### Usage
 
 ```
-$ java -jar girlcelly-magnet-extract.jar <archive>
+$ java -jar girlcelly-magnet-extract.jar
 ```
 
 e.g.
 ```
-$ java -jar girlcelly-magnet-extract.jar blog-date-201704
+$ java -jar girlcelly-magnet-extract.jar
 ```
+
 STDERR:
 ```
-Requesting page 0... found 10 URLs.
-Requesting page 1... found 10 URLs.
-Requesting page 2...
+
 ```
+
 STDOUT:
 ```
 magnet:?xt=urn:btih:1BE334D113C13F0D522CEFCFFC37B2833E1C513C
