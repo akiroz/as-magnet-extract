@@ -88,7 +88,7 @@
                      (filter (comp not nil?))
                      (map #(->> % second
                                 form-decode keywordize-keys :xt
-                                (str "magent:?xt="))))
+                                (str "magnet:?xt="))))
                 (catch Exception _
                   (-> (<< "ERROR: Failed to extract magnet URI for ~{title}")
                       colors/red colors/bold eprintln))))))

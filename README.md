@@ -4,11 +4,15 @@ Simple script for grabbing magnet URIs from AS Forums
 
 ### Changes
 
+0.3.1:
+- Correct spelling of `magnet` for output links
+
 0.3.0:
 - Complete rewrite, rename project
 - Grab releases from AS Forums
 - Network concurrency: 16
 - External search spec `search.edn`
+- Strips off trackers from magnet URI
 
 0.2.0:
 - Auto-detect last page
@@ -29,6 +33,8 @@ Latest Release: [as-magnet-extract.jar][]
 $ java -jar as-magnet-extract.jar           ## reads search.edn from current dir
 $ java -jar as-magnet-extract.jar 64265316  ## provide an AS search ID
 ```
+
+See provided `search.edn` for example config or get your own search ID from AS Forums.
 
 e.g.
 ```
