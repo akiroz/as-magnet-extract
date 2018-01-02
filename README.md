@@ -25,7 +25,7 @@ Simple script for grabbing magnet URIs from AS Forums
 
 Latest Release: [as-magnet-extract.jar][]
 
-[as-magnet-extract.jar]: https://github.com/akiroz/as-magnet-extract/releases/download/0.3.0/as-magnet-extract.jar
+[as-magnet-extract.jar]: https://github.com/akiroz/as-magnet-extract/releases/download/0.3.1/as-magnet-extract.jar
 
 ### Usage
 
