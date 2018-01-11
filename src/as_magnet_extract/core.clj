@@ -35,31 +35,32 @@
        (re-find #"[0-9]+$")))
 
 (defn get-pages [search-id]
-  (let [page-1  (-> (str (URL api-host "forum/search.php"))
-                    (http/get {:query-params {:searchid search-id}})
-                    :body parse as-hickory)
-        pages   (->> page-1
-                     (s/select (s/id "pagination_top"))
-                     first
-                     (s/select (s/nth-of-type 1 :a))
-                     first :content first string/trim
-                     (re-find #"[0-9]+$")
-                     Integer/parseInt)
-        threads (->> page-1
-                     (s/select (s/id "postpagestats"))
-                     first :content first string/trim
-                     (re-find #"[0-9]+$")
-                     Integer/parseInt)
+  (let [page-1      (-> (str (URL api-host "forum/search.php"))
+                        (http/get {:query-params {:searchid search-id}})
+                        :body parse as-hickory)
+        pagination  (s/select (s/id "pagination_top") page-1)
+        pages       (if (= (count pagination) 0)
+                      1
+                      (->> (first pagination)
+                           (s/select (s/nth-of-type 1 :a))
+                           first :content first string/trim
+                           (re-find #"[0-9]+$")
+                           Integer/parseInt))
+        threads     (->> page-1
+                         (s/select (s/id "postpagestats"))
+                         first :content first string/trim
+                         (re-find #"[0-9]+$")
+                         Integer/parseInt)
         ]
     (eprintln (<< "Found ~{threads} threads in ~{pages} pages."))
     (lazy-cat ;; nyan~
-      [page-1]
-      (cp/upfor net-pool
-                [page-no (range 2 (inc pages))]
-                (-> (str (URL api-host "forum/search.php"))
-                    (http/get {:query-params {:searchid search-id
-                                              :page     page-no}})
-                    :body parse as-hickory)))))
+              [page-1]
+              (cp/upfor net-pool
+                        [page-no (range 2 (inc pages))]
+                        (-> (str (URL api-host "forum/search.php"))
+                            (http/get {:query-params {:searchid search-id
+                                                      :page     page-no}})
+                            :body parse as-hickory)))))
 
 (defn get-links [result-page]
   (cp/upfor net-pool
