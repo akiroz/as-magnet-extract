@@ -4,6 +4,9 @@ Simple script for grabbing magnet URIs from AS Forums
 
 ### Changes
 
+0.3.2:
+- Fix page count when there's only 1 page
+
 0.3.1:
 - Correct spelling of `magnet` for output links
 
@@ -25,7 +28,7 @@ Simple script for grabbing magnet URIs from AS Forums
 
 Latest Release: [as-magnet-extract.jar][]
 
-[as-magnet-extract.jar]: https://github.com/akiroz/as-magnet-extract/releases/download/0.3.1/as-magnet-extract.jar
+[as-magnet-extract.jar]: https://github.com/akiroz/as-magnet-extract/releases/download/0.3.2/as-magnet-extract.jar
 
 ### Usage
 

@@ -1,4 +1,4 @@
-(defproject as-magnet-extract "0.3.1"
+(defproject as-magnet-extract "0.3.2"
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/core.incubator "0.1.4"]
                  [com.climate/claypoole "1.1.4"]
