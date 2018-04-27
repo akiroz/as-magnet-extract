@@ -9,6 +9,7 @@ Simple script for grabbing magnet URIs from AS Forums
 - Performance boost
   - Utilize keep-alive connections
   - Improved parallelism
+- `search.edn` -> `search.yml`
 
 0.3.2:
 - Fix page count when there's only 1 page
@@ -46,7 +47,7 @@ $ ./as_magnet_extract           ## reads search.edn from current dir
 $ ./as_magnet_extract 64265316  ## provide an AS search ID
 ```
 
-See provided `search.edn` for example config or get your own search ID from AS Forums.
+See provided `search.yml` for example config or get your own search ID from AS Forums.
 
 e.g.
 ```
