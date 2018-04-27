@@ -4,6 +4,12 @@ Simple script for grabbing magnet URIs from AS Forums
 
 ### Changes
 
+0.4.0:
+- Reimplement in Elixir
+- Performance boost
+  - Utilize keep-alive connections
+  - Improved parallelism
+
 0.3.2:
 - Fix page count when there's only 1 page
 
@@ -26,22 +32,25 @@ Simple script for grabbing magnet URIs from AS Forums
 
 ### Download
 
-Latest Release: [as-magnet-extract.jar][]
-
-[as-magnet-extract.jar]: https://github.com/akiroz/as-magnet-extract/releases/download/0.3.2/as-magnet-extract.jar
+Latest Release: [as_magnet_extract][]
 
 ### Usage
 
+Prerequisite:
+
+- [erlang][]
+
 ```
-$ java -jar as-magnet-extract.jar           ## reads search.edn from current dir
-$ java -jar as-magnet-extract.jar 64265316  ## provide an AS search ID
+## This is not a native binary, it depends on escript provided by env
+$ ./as_magnet_extract           ## reads search.edn from current dir
+$ ./as_magnet_extract 64265316  ## provide an AS search ID
 ```
 
 See provided `search.edn` for example config or get your own search ID from AS Forums.
 
 e.g.
 ```
-$ java -jar as-magnet-extract.jar
+$ ./as_magnet_extract
 ```
 
 STDERR:
@@ -65,10 +74,21 @@ magnet:?xt=urn:btih:422EB714E9CEB624881EF2683438C59F8DB29472
 
 ### Building
 
+Prerequisite:
+
+- git
+- [mix][]
+  - elixir
+  - erlang
+
 ```
 $ git clone ...
 $ cd as-magnet-extract
-$ lein uberjar
+$ mix deps.get
+$ mix escript.build
 ```
 
-Runable JAR is in `target/uberjar/`
+[as_magnet_extract]: https://github.com/akiroz/as-magnet-extract/releases/download/0.4.0/as_magnet_extract
+[erlang]: http://www.erlang.org/ 
+[mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
+
