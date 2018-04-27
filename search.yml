@@ -1,0 +1,16 @@
+
+contenttypeid:  1   # posts
+forumchoice[]:  47  # torrents
+
+## user filter
+searchuser:     "girlcelly"
+exactname:      1
+starteronly:    1
+
+## date filter
+searchdate:     4
+beforeafter:    "after"
+
+## sorting
+sortby:         "threadstart"
+order:          "descending"
