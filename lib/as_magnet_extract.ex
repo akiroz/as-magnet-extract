@@ -57,19 +57,16 @@ defmodule ASMagnetExtract do
 
   def loop(state) do
     case state do
-      %{
-        :thread_total => n,
-        :thread_parsed => n
-      } ->
+      %{:thread_total => n, :thread_parsed => n} ->
         IO.puts(:stderr, "Done! (#{n} titles)")
         System.halt()
-
       _ -> nil
     end
     receive do
       %Job{task: {:get_page, [1, search_id]}, result: {:ok, body}} ->
         {:parse_page, [body]} |> Honeydew.async(:parser, reply: true)
         {pages, threads} = parse_result(body)
+        IO.puts(:stderr, "Found #{threads} threads in #{pages} pages.")
         if pages > 1 do
           for p <- 2..pages do
             {:get_page, [p, search_id]} |> Honeydew.async(:http, reply: true)

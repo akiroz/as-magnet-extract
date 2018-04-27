@@ -4,11 +4,15 @@ Simple script for grabbing magnet URIs from AS Forums
 
 ### Changes
 
+0.4.1:
+- Print number of threads and pages
+
 0.4.0:
 - Reimplement in Elixir
 - Performance boost
   - Utilize keep-alive connections
   - Improved parallelism
+- Network concurrency: 24
 - `search.edn` -> `search.yml`
 
 0.3.2:

@@ -2,7 +2,7 @@ defmodule ASMagnetExtract.MixProject do
   use Mix.Project
   def project, do: [
     app: :as_magnet_extract,
-    version: "0.4.0",
+    version: "0.4.1",
     elixir: "~> 1.6",
     escript: [
       main_module: ASMagnetExtract,
