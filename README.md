@@ -42,16 +42,15 @@ Prerequisite:
 - [erlang][]
 
 ```
-## This is not a native binary, it depends on escript provided by env
-$ ./as_magnet_extract           ## reads search.edn from current dir
-$ ./as_magnet_extract 64265316  ## provide an AS search ID
+$ escript as_magnet_extract           ## reads search.edn from current dir
+$ escript as_magnet_extract 64265316  ## provide an AS search ID
 ```
 
 See provided `search.yml` for example config or get your own search ID from AS Forums.
 
 e.g.
 ```
-$ ./as_magnet_extract
+$ escript as_magnet_extract
 ```
 
 STDERR:
