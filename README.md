@@ -92,7 +92,7 @@ $ mix deps.get
 $ mix escript.build
 ```
 
-[as_magnet_extract]: https://github.com/akiroz/as-magnet-extract/releases/download/0.4.0/as_magnet_extract
+[as_magnet_extract]: https://github.com/akiroz/as-magnet-extract/releases/download/0.4.1/as_magnet_extract
 [erlang]: http://www.erlang.org/ 
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
 
